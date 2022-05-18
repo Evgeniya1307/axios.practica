@@ -21,4 +21,4 @@ const List = (props) => {
     </ul>
   );
 };
-export default List;
+export default List; // использовать где  то ещё
