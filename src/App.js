@@ -28,6 +28,11 @@ function App() {
   useEffect(() => {
     setAppState({ loading: true });
     const apiUrl = 'https://api.github.com/users/hacktivist123/repos';
+    /*В этом блоке кода мы выполняем запрос GET,
+     затем возвращаем промис, содержащий данные репозиториев, 
+     и присваиваем данные глобальной переменной с именем allRepos. 
+     Затем мы устанавливаем для текущего состояния загрузки значение
+      false и также передаем данные из запроса в переменную состояния repos. */
     axios.get(apiUrl).then((repos) => { //Axios axios.get, чтобы выполнить get-запрос к API.
       const allRepos = repos.data;
       setAppState({ loading: false, repos: allRepos });
