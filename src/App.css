@@ -1,3 +1,8 @@
+/* мы присваиваем различные имена классов каждому элементу в файле App.js и, таким образом, используем эти имена классов для стилизации приложения.*/
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
 :root {
   --basic-color: #23cc71;

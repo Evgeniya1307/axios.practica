@@ -6,6 +6,9 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import List from './component/List';
 import withListLoading from './component/withListLoading';
+import axios from 'axios';
+
+
 function App() {
   /* Здесь мы создаем новый компонент с именем ListLoading 
   и назначаем withListLoadingкомпонентом высшего порядка, 
@@ -24,12 +27,11 @@ function App() {
   порядка будет отображать сообщение */
   useEffect(() => {
     setAppState({ loading: true });
-    const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((repos) => {
-        setAppState({ loading: false, repos: repos });
-      });
+    const apiUrl = 'https://api.github.com/users/hacktivist123/repos';
+    axios.get(apiUrl).then((repos) => { //Axios axios.get, чтобы выполнить get-запрос к API.
+      const allRepos = repos.data;
+      setAppState({ loading: false, repos: allRepos });
+    });
   }, [setAppState]);
   
   return ( // Здесь мы в основном просто отображаем Component,
