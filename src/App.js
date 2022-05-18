@@ -31,7 +31,10 @@ function App() {
         setAppState({ loading: false, repos: repos });
       });
   }, [setAppState]);
-  return (
+  
+  return ( // Здесь мы в основном просто отображаем Component,
+  // который мы назначили компонентом высшего порядка, а также заполняем 
+  //свойства isLoading и repos значениями состояния.
     <div className='App'>
       <div className='container'>
         <h1>My Repositories</h1>
